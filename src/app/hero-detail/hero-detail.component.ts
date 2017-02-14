@@ -9,7 +9,7 @@ import { Hero } from '../services/hero';
 })
 export class HeroDetailComponent {
 
-  @Input()
-  hero: Hero;
+  @Input() hero: Hero;
+  @Input() fromParent:string;
 
 }
