@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { Hero } from '../services/hero';
 import { HeroService } from '../services/hero.service';
+import { TestService } from '../services/test.service';
 //import 'rxjs/add/operator/toPromise';
 declare var firebase: any;
 
@@ -17,12 +18,15 @@ export class HeroesComponent {
   heroes:  Hero[];
   selectedHero: Hero;
   chTitle = 'From parent';  
+  name: string;
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService, private testService: TestService) { }
 
   ngOnInit(): void {
 
     this.getHeroesFromLocalAPI2();
+
+    this.name = this.testService.getName();
         
     /*this.getHeroes();
     this.getHerosFromFireBase();
